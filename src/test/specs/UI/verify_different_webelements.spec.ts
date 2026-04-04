@@ -1,5 +1,5 @@
-import { test } from "../../main/fixtures/fixtures";
-import testData from "../testdata/verify_different_webelements.json"
+import { test } from "../../../main/fixtures/fixtures";
+import testData from "../../testdata/verify_different_webelements.json"
 
 
 
