@@ -1,7 +1,5 @@
-import { diff } from "node:util";
-import { test } from "../main/fixtures/fixtures";
-import testData from "../test/testdata/verify_different_webelements.json"
-import { assert } from "node:console";
+import { test } from "../../main/fixtures/fixtures";
+import testData from "../testdata/verify_different_webelements.json"
 
 
 
@@ -20,5 +18,6 @@ test("Validate Different WebElements", async ({ differentWebElements }) => {
     for(const product of testData.product){
         await differentWebElements.verifyFixedHeaderWebTable(product.name, product.position, product.city, product.amount)
     }
-    // await differentWebElements.verifyFixedHeaderWebTable(testData.name, testData.position, testData.city, testData.amount);
+    await differentWebElements.mouseHOver(testData.hoverPosition);
+    await differentWebElements.verifyFrame();
 })

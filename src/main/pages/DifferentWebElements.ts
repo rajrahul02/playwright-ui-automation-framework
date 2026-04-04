@@ -1,4 +1,4 @@
-import { expect } from "@playwright/test";
+import { expect, Frame } from "@playwright/test";
 import { count } from "node:console";
 import { Locator, Page } from "playwright";
 
@@ -16,6 +16,7 @@ export class DifferentWebElements {
     readonly confirmButton: Locator;
     readonly staticWebTable: Locator;
     readonly fixedHeaderWebTable: Locator;
+    readonly mouseHoverButton: Locator;
 
     constructor(private readonly page: Page) {
         this.suggestionDropDown = this.page.locator('.inputs.ui-autocomplete-input');
@@ -28,6 +29,7 @@ export class DifferentWebElements {
         this.confirmButton = this.page.locator('#confirmbtn');
         this.staticWebTable = this.page.locator('table[name="courses"]');
         this.fixedHeaderWebTable = this.page.locator('.tableFixHead').locator('table[id="product"]');
+        this.mouseHoverButton = this.page.locator('#mousehover');
     }
 
     async goto() {
@@ -106,5 +108,16 @@ export class DifferentWebElements {
         await expect(columns.nth(1)).toHaveText(position);
         await expect(columns.nth(2)).toHaveText(city);
         await expect(columns.nth(3)).toHaveText(amount);
+    }
+
+    async mouseHOver(position: string){
+        await this.mouseHoverButton.hover();
+        await this.page.locator('.mouse-hover-content').getByText(position).click();
+    }
+
+    async verifyFrame(){
+        const frame = this.page.frame({name: 'iframe-name'})!;
+        await expect(frame.locator('a', {hasText: "Register"})).toBeVisible();
+
     }
 }

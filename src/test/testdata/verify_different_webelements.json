@@ -23,5 +23,6 @@
             "city": "Delhi",
             "amount": "33"
         }
-    ]
+    ],
+    "hoverPosition": "Top"
 }
