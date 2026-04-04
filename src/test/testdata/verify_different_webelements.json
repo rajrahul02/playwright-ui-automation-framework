@@ -1,0 +1,27 @@
+{
+    "radioBUtton": "radio2",
+    "keywords": "Ind",
+    "country": "India",
+    "dropDOwnValue": "option1",
+    "checkBox": [
+        "option1",
+        "option3"
+    ],
+    "alertText": "Hello , Are you sure you want to confirm?",
+    "course": "WebServices / REST API Testing with SoapUI",
+    "fee": "35",
+    "product": [
+        {
+            "name": "Ronaldo",
+            "position": "Sportsman",
+            "city": "Chennai",
+            "amount": "31"
+        },
+        {
+            "name": "Smith",
+            "position": "Cricketer",
+            "city": "Delhi",
+            "amount": "33"
+        }
+    ]
+}
